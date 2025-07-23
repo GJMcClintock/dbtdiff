@@ -25,7 +25,8 @@ The default behavior is to run `dbt build` on all downstream models that have ch
 dbtdiff                        # Compare against last commit
 dbtdiff -m                     # Compare against origin/main
 dbtdiff -c run                 # Swap `build` for `run`, dbt run -t dev
-dbtdiff -n 1                   # Custom command, target, and only run 1 downstream model
+dbtdiff -n 1                   # Run only run 1 downstream model
+dbtdiff -t prod                # Use the prod target, eg: dbt build -t prod
 dbtdiff -f                     # Include --full-refresh in the dbt command
 ```
 
