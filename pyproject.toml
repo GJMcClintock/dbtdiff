@@ -1,6 +1,6 @@
 [project]
 name = "dbtdiff"
-version = "0.1.1"
+version = "0.2.1"
 description = "Run dbt on changed models with model+ chaining."
 authors = [{ name = "Garrett McClintock"}]
 readme = "README.md"
