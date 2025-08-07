@@ -25,7 +25,8 @@ def main():
     parser.add_argument("-m", "--main", action="store_true", help="Compare against origin/main instead of HEAD")
     parser.add_argument("-c", "--command", default="build", help="dbt command to run (default: build)")
     parser.add_argument("-t", "--target", default="dev", help="dbt target (default: dev)")
-    parser.add_argument("-f", "--full-refresh", action="store_true", help="Include --full-refresh")
+    parser.add_argument("-fr", "--full-refresh", action="store_true", help="Include --full-refresh")
+    parser.add_argument("-ff", "--fail-fast", action="store_true", help="Include --fail-fast")
     parser.add_argument("-n", "--number", help="Add a number suffix after the '+' (e.g., +1)")
 
     args = parser.parse_args()
@@ -42,6 +43,8 @@ def main():
     cmd = ["dbt", args.command, "-s", selector, "-t", args.target]
     if args.full_refresh:
         cmd.append("--full-refresh")
+    if args.fail_fast:
+        cmd.append("--fail-fast")
 
     print(f"Running: {' '.join(cmd)}")
     subprocess.run(cmd)

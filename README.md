@@ -27,10 +27,11 @@ dbtdiff -m                     # Compare against origin/main
 dbtdiff -c run                 # Swap `build` for `run`, dbt run -t dev
 dbtdiff -n 1                   # Run only run 1 downstream model
 dbtdiff -t prod                # Use the prod target, eg: dbt build -t prod
-dbtdiff -f                     # Include --full-refresh in the dbt command
+dbtdiff -fr                    # Include --full-refresh in the dbt command
+dbtdiff -ff                    # Include --fail-fast in the dbt command
 ```
 
-All options can be combined, or fully qualified with `--command`, `--target`, `--number`, `--main` and `--full-refresh`.
+All options can be combined, or fully qualified with `--command`, `--target`, `--number`, `--main`, `--fail-fast` and `--full-refresh`.
 
 ## Quick QOL Roadmap
 
